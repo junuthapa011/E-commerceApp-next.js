@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title className="text-color">Dream Labs - Shopping Made Fun</title>
-      <body>{children}</body>
+      <body className="background-color">{children}</body>
     </html>
   );
 }

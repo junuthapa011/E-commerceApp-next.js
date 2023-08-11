@@ -11,8 +11,12 @@ interface IProps {
 function FormInput({ htmlFor, children, name, type, placeholder }: IProps) {
   return (
     <>
-      <label htmlFor={htmlFor}>{children}</label>
-      <input name={name} required type={type} placeholder={placeholder} />
+      <div className="flex flex-col">
+        <label htmlFor={htmlFor} className="text-color">
+          {children}
+        </label>
+        <input name={name} required type={type} placeholder={placeholder} />
+      </div>
     </>
   );
 }

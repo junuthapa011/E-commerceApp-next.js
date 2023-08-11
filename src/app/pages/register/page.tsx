@@ -1,12 +1,16 @@
 import React from "react";
-import Button from "../components/button/page";
-import FormInput from "../components/form/page";
+import Button from "../../components/button/page";
+import FormInput from "../../components/form/page";
+import WelcomeMsg from "@/app/components/welcome-msg/page";
 
 function Register() {
   return (
-    <div className="flex flex-col border-black border-2 w-min px-[100px] py-[50px]">
-      <form className="flex flex-col">
-        <p>Get started with a free account!!!</p>
+    <div className="flex justify-center mt-[150px]">
+      <div>
+        <WelcomeMsg />
+      </div>
+      <div className="flex flex-col border-solid  border-2 rounded bg-transparent-75 px-[30px] py-[60px]">
+        <p className="text-color">Get started with a free account!!!</p>
 
         <FormInput
           htmlFor="Email"
@@ -44,20 +48,22 @@ function Register() {
           Confirm Password
         </FormInput>
 
-        <Button className="" onSubmit="">
+        <Button className="text-white signin-button-bg " onSubmit="">
           Sign up
         </Button>
-      </form>
-      <p>
-        Already have an account? <span>Sign in.</span>
-      </p>
 
-      <Button className="" onSubmit="">
-        Sign up with Facebook
-      </Button>
-      <Button className="" onSubmit="">
-        Sign up with Google
-      </Button>
+        <p className="text-color">
+          Already have an account?
+          <span className="text-blue-600">Sign in.</span>
+        </p>
+
+        <Button className="" onSubmit="">
+          Sign up with Facebook
+        </Button>
+        <Button className="" onSubmit="">
+          Sign up with Google
+        </Button>
+      </div>
     </div>
   );
 }

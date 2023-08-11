@@ -4,5 +4,20 @@
 
 .text-color {
   color: rgba(126, 46, 133, 1);
+}
+
+.text-cursive {
   font-family: cursive;
+}
+
+.background-color {
+  background-color: rgba(251, 235, 252, 1);
+}
+
+.signin-button-bg {
+  background-color: rgba(162, 118, 177, 1);
+}
+
+.bg-transparent-75 {
+  background-color: rgba(255, 255, 255, 0.7);
 }
