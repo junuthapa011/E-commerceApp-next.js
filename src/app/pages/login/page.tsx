@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Button from "../../components/button/page";
-// import FormInput from "../../components/form/page";
 import WelcomeMsg from "@/app/components/welcome-msg/page";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -96,7 +95,12 @@ function Login() {
             </Formik>
             <p className="text-color flex justify-center">
               Don't have an account?
-              <span className="text-blue-600 hover:underline hover:cursor-pointer">
+              <span
+                className="text-blue-600 hover:underline hover:cursor-pointer"
+                onClick={() => {
+                  router.push("/pages/register");
+                }}
+              >
                 Sign Up.
               </span>
             </p>
