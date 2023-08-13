@@ -3,10 +3,10 @@ import React from "react";
 interface IProps {
   children: React.ReactNode;
   className: string;
-  onSubmit: () => {};
+  onSubmit: () => boolean;
 }
 
-function Button({ children, className, onSubmit }: IProps) {
+function Button({ children, className, onSubmit, type }: IProps) {
   return (
     <>
       <button className={className} onSubmit={onSubmit}>

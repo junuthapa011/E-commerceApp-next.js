@@ -10,7 +10,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <title className="text-color">Dream Labs - Shopping Made Fun</title>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap"
+          rel="stylesheet"
+        ></link>
+      </head>
+      <title className="text-color">Dream Labs</title>
       <body className="background-color">{children}</body>
     </html>
   );
