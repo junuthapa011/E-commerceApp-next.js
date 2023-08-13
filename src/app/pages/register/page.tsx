@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Button from "../../components/button/page";
 import WelcomeMsg from "@/app/components/welcome-msg/page";
 import { Form, Formik, ErrorMessage, Field } from "formik";
@@ -7,8 +7,6 @@ import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 
 function Register() {
-  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
-
   const initialValues = {
     email: "",
     username: "",
@@ -32,17 +30,6 @@ function Register() {
       .required("*Please confirm password*")
       .oneOf([Yup.ref("password")], "*Passwords must match*"),
   });
-
-  const handleSubmit = (values: any) => {
-    if (!validationSchema.isValidSync(values)) {
-      setIsPasswordModalOpen(true);
-      return;
-    }
-  };
-
-  const closePasswordModal = () => {
-    setIsPasswordModalOpen(false);
-  };
 
   const router = useRouter();
   const submitHandler = (values: typeof initialValues) => {
