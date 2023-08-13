@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../components/button/page";
 import WelcomeMsg from "@/app/components/welcome-msg/page";
 import { Form, Formik, ErrorMessage, Field } from "formik";
@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 
 function Register() {
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+
   const initialValues = {
     email: "",
     username: "",
@@ -15,7 +17,9 @@ function Register() {
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().required("*Please enter your email*"),
+    email: Yup.string()
+      .matches(/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/, "*Enter valid email*")
+      .required("*Please enter your email*"),
     username: Yup.string().required("*Please enter your username*"),
     password: Yup.string()
       .min(8)
@@ -29,6 +33,17 @@ function Register() {
       .oneOf([Yup.ref("password")], "*Passwords must match*"),
   });
 
+  const handleSubmit = (values: any) => {
+    if (!validationSchema.isValidSync(values)) {
+      setIsPasswordModalOpen(true);
+      return;
+    }
+  };
+
+  const closePasswordModal = () => {
+    setIsPasswordModalOpen(false);
+  };
+
   const router = useRouter();
   const submitHandler = (values: typeof initialValues) => {
     localStorage.setItem("registeredUser", JSON.stringify(values));
@@ -38,7 +53,9 @@ function Register() {
   return (
     <>
       <div className="flex justify-center mb-4">
-        <p className="text-color font-island font-bold text-6xl">Dream Labs</p>
+        <h1 className="text-color island-font font-bold text-6xl">
+          Dream Labs
+        </h1>
       </div>
       <div className="flex justify-center items-center">
         <div className="flex">
@@ -124,17 +141,19 @@ function Register() {
                   className="text-red-600"
                 />
 
-                <button
-                  className="text-white signin-button-bg p-2 mt-2 border-solid border-2 border-text-color rounded-md w-full"
-                  type="submit"
-                >
+                <Button className="text-white signin-button-bg p-2 mt-2 border-solid border-2 border-text-color rounded-md w-full hover:underline">
                   Sign up
-                </button>
+                </Button>
               </Form>
             </Formik>
             <p className="text-color flex justify-center">
               Already have an account?
-              <span className="text-blue-600 cursor">Sign in.</span>
+              <span
+                className="text-blue-600 hover:underline hover:cursor-pointer"
+                onClick={() => router.push("/pages/login")}
+              >
+                Sign in.
+              </span>
             </p>
             <p className="flex justify-center text-slate-300 py-2">
               <span>_________________________</span>
@@ -144,8 +163,9 @@ function Register() {
 
             <button
               className="flex items-center text-white fb-button-bg p-1 mt-1 border-solid border-2 border-text-color rounded-md w-full"
-              type="submit"
-              onSubmit={submitHandler}
+              onClick={() =>
+                (window.location.href = "https://www.facebook.com/signup")
+              }
             >
               <img
                 src="/images/facebook-logo.png"
@@ -153,16 +173,19 @@ function Register() {
                 height="35px"
                 className=""
               />
-              <p className="pl-14">Sign up with Facebook</p>
+              <p className="pl-14 hover:underline">Sign up with Facebook</p>
             </button>
 
             <button
               className="flex items-center justify-start text-white google-button-bg p-1 mt-1 border-solid border-2 border-text-color rounded-md w-full"
               type="submit"
-              onSubmit={submitHandler}
+              onClick={() =>
+                (window.location.href =
+                  "https://accounts.google.com/signup/v2/createaccount?flowName=GlifWebSignIn&flowEntry=SignUp")
+              }
             >
               <img src="/images/google-logo.jpg" width="35px" height="35px" />
-              <p className="pl-14">Sign up with Google</p>
+              <p className="pl-14 hover:underline">Sign up with Google</p>
             </button>
           </div>
         </div>
