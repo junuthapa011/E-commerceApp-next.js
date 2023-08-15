@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Red Pleated Flowy Top",
+      "image": "https://pimg.bucklecontent.com/images/products/57030MT0063L/CHD/f/ac87055af1040c914efc473b4e230325v3?quality=0.8&width=845",
+      "gender": "women",
+      "description": "Red flowy top with beautiful flower pattern",
+      "category": "Tops"
+    },
+    {
+      "id": 2,
+      "title": "Yellow Shirred Strappy Crop Top",
+      "image": "https://cdn-img.prettylittlething.com/e/f/7/1/ef7102cbecc275a19852031fed44cb9e3737036d_CLW1229_1.JPG",
+      "gender": "women",
+      "description": "Yellow Shirred Strappy Crop Top",
+      "category": "Tops"
+    },
+    {
+      "id": 3,
+      "title": "Cute Royal Blue Top",
+      "image": "https://www.lulus.com/images/product/xlarge/2462002_452902.jpg",
+      "gender": "women",
+      "description": "Cute royal blue open shoulder top",
+      "category": "Tops"
+    },
+    {
+      "id": 4,
+      "title": "Red FLowy Top",
+      "image": "",
+      "gender": "women",
+      "description": "Red flowy top with beautiful flower pattern",
+      "category": "Tops"
+    },
+    {
+      "id": 5,
+      "title": "Cute Light Blue Crop Top",
+      "image": "https://cdn.tobi.com/product_images/md/1/light-blue-field-of-raindrops-crop-top.jpg",
+      "gender": "women",
+      "description": "Light Blue Off Shoulder Top",
+      "category": "Tops"
+    }
+  ]
+}
