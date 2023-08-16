@@ -13,8 +13,8 @@ function Login() {
   };
 
   const validationSchema = Yup.object({
-    username: Yup.string().required("*Please valid email address*"),
-    password: Yup.string().required("*Please valid your password*"),
+    username: Yup.string().required("*Please enter valid email address*"),
+    password: Yup.string().required("*Please enter valid password*"),
   });
 
   const router = useRouter();
@@ -27,7 +27,7 @@ function Login() {
         values.password === registeredUser.password
       ) {
         localStorage.setItem("authenticated", "true");
-        router.push("/pages/login");
+        router.push("/pages/homepage");
       } else {
         alert("Invalid credentials"); // use toastify
       }

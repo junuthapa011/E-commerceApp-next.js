@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "products": [
     {
       "id": 1,
       "title": "Red Pleated Flowy Top",
@@ -39,6 +39,15 @@
       "gender": "women",
       "description": "Light Blue Off Shoulder Top",
       "category": "Tops"
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "username": "junuthapa011",
+      "token": "",
+      "email": "junuthapa011@gmail.com"
     }
   ]
 }
