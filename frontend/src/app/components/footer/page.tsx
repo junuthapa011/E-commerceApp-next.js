@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="">
-      <div className="flex fixed bottom-0 bg-white w-full h-[25%] justify-evenly pt-4">
+      <div className="flex fixed bottom-0 bg-white w-full h-auto justify-evenly pt-4">
         <ul>
           <li className=" text-lg font-semibold">Shop</li>
           <div className="text-xs py-2">
