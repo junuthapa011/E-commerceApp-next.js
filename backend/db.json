@@ -27,7 +27,7 @@
     {
       "id": 4,
       "title": "Red FLowy Top",
-      "image": "",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41PLTmSGW3L.jpg",
       "gender": "women",
       "description": "Red flowy top with beautiful flower pattern",
       "category": "Tops"
@@ -40,5 +40,6 @@
       "description": "Light Blue Off Shoulder Top",
       "category": "Tops"
     }
-  ]
+  ],
+  "users": []
 }

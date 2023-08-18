@@ -32,9 +32,26 @@ function Register() {
   });
 
   const router = useRouter();
-  const submitHandler = (values: typeof initialValues) => {
-    localStorage.setItem("registeredUser", JSON.stringify(values));
-    router.push("/pages/login");
+
+  const submitHandler = async (values: typeof initialValues) => {
+    try {
+      const response = await fetch("https://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      if (response.ok) {
+        router.push("/pages/login");
+      } else {
+        alert("Invalid entries");
+      }
+    } catch (error) {
+      console.log("An error occured", error);
+    }
+    // localStorage.setItem("registeredUser", JSON.stringify(values));
+    // router.push("/pages/login");
   };
 
   return (
